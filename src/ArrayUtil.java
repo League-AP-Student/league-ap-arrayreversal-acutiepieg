@@ -1,5 +1,4 @@
-
-
+import java.lang.reflect.Array;
 
 public class ArrayUtil {
 	
@@ -9,7 +8,10 @@ public class ArrayUtil {
 	*   @param arr the array to manipulate
 	*/
 	public static void reverseArray(int[] arr){
-		/* code goes here */
+		int[] newArray = new int[arr.length];
+		for(int i = arr.length; i >= 0; i--) {
+			 
+		}
 	}
 }
 
