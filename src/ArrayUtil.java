@@ -8,9 +8,11 @@ public class ArrayUtil {
 	*   @param arr the array to manipulate
 	*/
 	public static void reverseArray(int[] arr){
-		int[] newArray = new int[arr.length];
-		for(int i = arr.length; i >= 0; i--) {
-			 
+		for(int i = 0; i < arr.length/2 ; i++) {
+			 int x = arr[i];
+			 int y = arr[arr.length - i - 1];
+			 arr[i] = y;
+			 arr[arr.length - i - 1] = x;
 		}
 	}
 }
@@ -26,7 +28,9 @@ class Matrix{
 	*   Postcondition: The elements in each row have been reversed
 	*/
 	public void reverseAllRows(){
-		/* code goes here */
+		for(int i = 0; i < mat.length; i ++) {
+			ArrayUtil.reverseArray(mat[i]);
+		}
 	}
 	
 	/** Reverses the elements of mat.
@@ -39,7 +43,15 @@ class Matrix{
 	*     originally the first element.
 	*/
 	public void reverseMatrix(){
-		/* code goes here */
+		reverseAllRows();
+		for(int i = 0; i < mat.length; i ++) {
+			for(int j = 0; j < mat[0].length; j ++) {
+				int x = mat[i][j];
+				 int y = mat[mat.length - i - 1][j];
+				 mat[i][j] = y;
+				 mat[mat.length - i - 1][j] = x;
+			}
+		}
 	}
 	
 	public int[][] getIntArray(){
